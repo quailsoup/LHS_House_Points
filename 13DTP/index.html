@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- page title -->
+    <title>Lincoln High School House Points</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- font being used for the page -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link href='https://fonts.googleapis.com/css?family=Archivo' rel='stylesheet'>
+</head>
+<body>
+    <div class="navbar">
+      <!-- navbar page titles -->
+        <a href="index.html#" target="_self">House Points</a>
+        <a href="house_events.html" target="_self">House Event Calendar</a>
+        <a href="edit_housepoints.html" target="_self">Edit House Points</a>
+      </div>
+    <div class="header">
+      <!-- Lincoln High School logo displayed in the header -->
+        <img class="logo" src="lhs_logo.png" alt="logo" style="margin-top: -34px;"/>
+        <!-- page title in the header and centering -->
+        <h1 style="margin: 0 auto; width: fit-content;">Lincoln High School House Points</h1>
+      </div>
+      
+      <!-- page title -->
+    <div class="title">
+        <h1>House Points</h1>
+    </div>
+    
+    <!-- size of the house points bar chart -->
+    <div id="graph">
+      <canvas id="myChart" style="width:100%;width:500px"></canvas>
+
+    </div>
+
+    <!-- displaying the number of patiki house points underneath the bar chart -->
+    <div class="h2" style="margin: 10px;">
+  <h2>Pātiki House Points Total:</h2>
+  <span>Pātiki Total: <span class="count" id="patiki-count">Loading...</span> house points</span>
+
+    <!-- displaying the number of kuaka house points underneath the bar chart -->
+  <h2>Kūaka House Points Total:</h2>
+  <span>Kūaka Total: <span class="count" id="kuaka-count">Loading...</span> house points</span>
+
+    <!-- displaying the number of kotare house points underneath the bar chart -->
+  <h2>Kōtare House Points Total:</h2>
+  <p>Kōtare Total: <span class="count" id="kotare-count">Loading...</span> house points</p>
+
+    <!-- displaying the number of kahu house points underneath the bar chart -->
+  <h2>Kāhu House Points Total:</h2>
+  <p>Kāhu Total: <span class="count" id="kahu-count">Loading...</span> house points</p>
+
+    <!-- displaying the number of mako house points underneath the bar chart -->
+  <h2>Mako House Points Total:</h2>
+  <p>Mako Total: <span class="count" id="mako-count">Loading...</span> house points</p>
+
+    <!-- displaying the number of inaka house points underneath the bar chart -->
+  <h2>Īnaka House Points Total:</h2>
+  <p>Īnaka Total: <span class="count" id="inaka-count">Loading...</span> house points</p>
+
+  </div>
+
+  <!-- Firebase compat SDKs for application function-->
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-database-compat.js"></script>
+
+  <script>
+    // firebase initialisation
+    const firebaseConfig = {
+  apiKey: "AIzaSyDGkNus0BpWcV68Xhcgl-iWkHNmYbaLDiU",
+  authDomain: "house-points-83688.firebaseapp.com",
+  databaseURL: "https://house-points-83688-default-rtdb.firebaseio.com",
+  projectId: "house-points-83688",
+  storageBucket: "house-points-83688.firebasestorage.app",
+  messagingSenderId: "706900936679",
+  appId: "1:706900936679:web:21e15da81946fb41b29f42",
+  measurementId: "G-83FTQPYTEL"
+};
+
+    // Initialise Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+    // Load and display the patiki count
+    const patikiCountDisplay = document.getElementById('patiki-count');
+    const patikiRef = db.ref('votes/patiki');
+
+    patikiRef.on('value', snapshot => {
+      const patikiCount = snapshot.val() || 0;
+      patikiCountDisplay.textContent = patikiCount;
+
+
+    // Load and display the kuaka count
+    const kuakaCountDisplay = document.getElementById('kuaka-count');
+    const kuakaRef = db.ref('votes/kuaka');
+
+    kuakaRef.on('value', snapshot => {
+      const kuakaCount = snapshot.val() || 0;
+      kuakaCountDisplay.textContent = kuakaCount;
+
+    
+    // Load and display the kotare count
+    const kotareCountDisplay = document.getElementById('kotare-count');
+    const kotareRef = db.ref('votes/kotare');
+
+    kotareRef.on('value', snapshot => {
+      const kotareCount = snapshot.val() || 0;
+      kotareCountDisplay.textContent = kotareCount;
+
+
+      // Load and display the kahu count
+    const kahuCountDisplay = document.getElementById('kahu-count');
+    const kahuRef = db.ref('votes/kahu');
+
+    kahuRef.on('value', snapshot => {
+      const kahuCount = snapshot.val() || 0;
+      kahuCountDisplay.textContent = kahuCount;
+
+      // Load and display the mako count
+    const makoCountDisplay = document.getElementById('mako-count');
+    const makoRef = db.ref('votes/mako');
+
+    makoRef.on('value', snapshot => {
+      const makoCount = snapshot.val() || 0;
+      makoCountDisplay.textContent = makoCount;
+
+            // Load and display the inaka count
+    const inakaCountDisplay = document.getElementById('inaka-count');
+    const inakaRef = db.ref('votes/inaka');
+
+    inakaRef.on('value', snapshot => {
+      const inakaCount = snapshot.val() || 0;
+      inakaCountDisplay.textContent = inakaCount;
+
+      // these are the Lincoln High School houses
+      var xValues = ["Pātiki", "Kūaka", "Kōtare", "Kāhu", "Mako", "Īnaka"];
+        // the number of house points
+      var yValues = [patikiCount, kuakaCount, kotareCount, kahuCount, makoCount, inakaCount];
+        // the colours of the houses
+      var barColors = ["#e72d2a", "#f9a245","#fdeb6c","#60ac3f","#00a2b9", "#eda6ac"];
+      
+      // display bar chart
+      
+      new Chart("myChart", {
+      type: "bar",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+      options: {
+        legend: {display: false},
+        title: {
+          display: true,
+          // title of bar chart
+          text: "House Points 2025"
+        }
+      }
+      });
+    });
+  });
+});
+    });
+  });
+});
+
+  </script>
+</body>
+</html>

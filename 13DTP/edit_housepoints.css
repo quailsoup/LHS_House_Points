@@ -1,0 +1,60 @@
+body {
+  /* margin of the webpage */
+  margin: 0;
+  /* font style */
+  font-family: 'Archivo';
+}
+
+.header {
+  /* header design */
+  display: block;
+  padding: 80px;
+  text-align: center;
+  background: #A5182D;
+  color: white;
+  width: 100%; 
+  
+}
+/* margin of h1 */
+h1 {
+  margin: 0%;
+}
+
+img.logo {
+  /*LHS logo size */
+  height: 25%;
+  width: 25%;
+  float: left;
+}
+
+.header h1 {
+  /* header font size*/
+  font-size: 40px;
+  /*header position */
+  text-align: center;
+}
+/* top navigation bar colour */
+.navbar {
+  overflow: hidden;
+  background-color: #a5182d;
+}
+
+/* Link colours */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Change colour of links on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: #a5182d;
+}
+/* alignment of title page */
+.title {
+  text-align: center;
+}
