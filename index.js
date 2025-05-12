@@ -144,6 +144,24 @@ document.getElementById('submit-kuaka').addEventListener('click', () => {
 });
 
 // Submit kotare house points
+  document.getElementById("reset-kotare").addEventListener("click", function() {
+  // Ask user if they want to reset the house points
+    const confirmed = confirm("Are you sure you want to reset Kōtare's points to 0?");
+  if (confirmed) {
+  // Reset the house points
+     document.getElementById("kotare-count").textContent = "0";
+      // Update the house points on Firebase
+    const db = firebase.database();
+    kotareRef.set(0)
+      .then(() => {
+        console.log("Kōtare's points reset to 0 in Firebase.");
+      })
+      .catch((error) => {
+        console.error("Error resetting points:", error);
+      });
+  }
+  });
+
 document.getElementById('submit-kotare').addEventListener('click', () => {
   const inputkotareVal = parseInt(kotareInput.value);
   
