@@ -78,7 +78,7 @@ const firebaseConfig = {
      document.getElementById("patiki-count").textContent = "0";
       // Update the house points on Firebase
     const db = firebase.database();
-    db.ref("patiki-count").set(0)
+    patikiRef.set(0)
       .then(() => {
         console.log("Patiki's points reset to 0 in Firebase.");
       })
