@@ -86,9 +86,7 @@ const firebaseConfig = {
         console.error("Error resetting points:", error);
       });
   }
-  
   });
-
   document.getElementById('submit-patiki').addEventListener('click', () => {
     const inputVal = parseInt(patikiInput.value);
 
@@ -110,6 +108,23 @@ const firebaseConfig = {
 });
 
 // Submit kuaka house points
+  document.getElementById("reset-kuaka").addEventListener("click", function() {
+  // Ask user if they want to reset the house points
+    const confirmed = confirm("Are you sure you want to reset Kūaka's points to 0?");
+  if (confirmed) {
+  // Reset the house points
+     document.getElementById("kuaka-count").textContent = "0";
+      // Update the house points on Firebase
+    const db = firebase.database();
+    kuakaRef.set(0)
+      .then(() => {
+        console.log("Kūaka's points reset to 0 in Firebase.");
+      })
+      .catch((error) => {
+        console.error("Error resetting points:", error);
+      });
+  }
+  });
 document.getElementById('submit-kuaka').addEventListener('click', () => {
     const inputkuakaVal = parseInt(kuakaInput.value);
     
