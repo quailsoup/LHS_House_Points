@@ -256,6 +256,24 @@ document.getElementById('submit-mako').addEventListener('click', () => {
 
 
 // Submit inaka house points
+  document.getElementById("reset-inaka").addEventListener("click", function() {
+  // Ask user if they want to reset the house points
+    const confirmed = confirm("Are you sure you want to reset Īnaka's points to 0?");
+  if (confirmed) {
+  // Reset the house points
+     document.getElementById("inaka-count").textContent = "0";
+      // Update the house points on Firebase
+    const db = firebase.database();
+    inakaRef.set(0)
+      .then(() => {
+        console.log("Īnaka's points reset to 0 in Firebase.");
+      })
+      .catch((error) => {
+        console.error("Error resetting points:", error);
+      });
+  }
+  });
+
 document.getElementById('submit-inaka').addEventListener('click', () => {
   const inputinakaVal = parseInt(inakaInput.value);
   
