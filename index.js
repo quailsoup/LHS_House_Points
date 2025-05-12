@@ -71,8 +71,12 @@ const firebaseConfig = {
 
   // Submit patiki house points
   document.getElementById("reset-patiki").addEventListener("click", function() {
-    document.getElementById("patiki-count").textContent = "0";
+    const confirmed = confirm("Are you sure you want to reset Patiki's points to 0?");
+  if (confirmed) {
+     document.getElementById("patiki-count").textContent = "0";
+  }
   });
+
   document.getElementById('submit-patiki').addEventListener('click', () => {
     const inputVal = parseInt(patikiInput.value);
 
