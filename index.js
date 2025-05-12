@@ -71,10 +71,22 @@ const firebaseConfig = {
 
   // Submit patiki house points
   document.getElementById("reset-patiki").addEventListener("click", function() {
-    const confirmed = confirm("Are you sure you want to reset Patiki's points to 0?");
+  // Ask user if they want to reset the house points
+    const confirmed = confirm("Are you sure you want to reset Pātiki's points to 0?");
   if (confirmed) {
+  // Reset the house points
      document.getElementById("patiki-count").textContent = "0";
+      // Update the house points on Firebase
+    const db = firebase.database();
+    db.ref("housePoints/patiki").set(0)
+      .then(() => {
+        console.log("Patiki's points reset to 0 in Firebase.");
+      })
+      .catch((error) => {
+        console.error("Error resetting points:", error);
+      });
   }
+  
   });
 
   document.getElementById('submit-patiki').addEventListener('click', () => {
