@@ -181,6 +181,24 @@ document.getElementById('submit-kotare').addEventListener('click', () => {
 });
 
 // Submit kahu house points
+  document.getElementById("reset-kahu").addEventListener("click", function() {
+  // Ask user if they want to reset the house points
+    const confirmed = confirm("Are you sure you want to reset Kāhu's points to 0?");
+  if (confirmed) {
+  // Reset the house points
+     document.getElementById("kahu-count").textContent = "0";
+      // Update the house points on Firebase
+    const db = firebase.database();
+    kahuRef.set(0)
+      .then(() => {
+        console.log("Kāhu's points reset to 0 in Firebase.");
+      })
+      .catch((error) => {
+        console.error("Error resetting points:", error);
+      });
+  }
+  });
+
 document.getElementById('submit-kahu').addEventListener('click', () => {
   const inputkahuVal = parseInt(kahuInput.value);
   
