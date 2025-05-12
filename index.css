@@ -49,7 +49,14 @@ img.logo {
 .title {
   text-align: center;
 }
-  
+
+img.patikilogo {
+/* patiki logo size */
+height: 25%;
+  width: 25%;
+  float: left;
+}
+
 
 #graph {
 /* graph position */
