@@ -70,12 +70,13 @@ const firebaseConfig = {
 
 
   // Submit patiki house points
-  document.getElementById('submit-patiki').addEventListener('click', () => {
-    const inputVal = parseInt(patikiInput.value);
-
   document.getElementById("reset-patiki").addEventListener("click", function() {
     document.getElementById("patiki-count").textContent = "0";
   });
+  document.getElementById('submit-patiki').addEventListener('click', () => {
+    const inputVal = parseInt(patikiInput.value);
+
+  
     
     if (isNaN(inputVal)) {
       alert("Please enter a valid number of house points.");
