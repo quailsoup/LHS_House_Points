@@ -171,6 +171,9 @@
         y: {
           ticks: {
             stepSize: 1,
+            callback: function(value) {
+              return Number.isInteger(value) ? value: null;
+            }
           }
         }
       }
