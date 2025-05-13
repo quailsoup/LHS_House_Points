@@ -166,8 +166,21 @@
           // title of bar chart
           text: "House Points 2025"
         }
-      }
-      });
+      },
+       scales: {
+          y: {
+            beginAtZero: false,
+            ticks: {
+              stepSize: 1,
+              callback: function(value) {
+                if (Number.isInteger(value)) {
+                  return value;
+                }
+              }
+            }
+          }
+        }
+     });
     });
   });
 });
