@@ -160,8 +160,6 @@
         }]
       },
       options: {
-        responsive: true,
-        plugins: {
         legend: {display: false},
         title: {
           display: true,
@@ -169,21 +167,7 @@
           text: "House Points 2025"
         }
       },
-       scales: {
-          y: {
-            beginAtZero: false,
-            ticks: {
-              stepSize: 1,
-              precision: 0, 
-              callback: function(value) {
-                if (Number.isInteger(value)) {
-                  return value;
-                }
-              }
-            }
-          }
-        }
-      }
+       
     });
   }); 
 });
