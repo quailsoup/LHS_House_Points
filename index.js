@@ -292,3 +292,4 @@ document.getElementById('submit-inaka').addEventListener('click', () => {
   inakaInput.value = ""; // Clears the box after input
 
 });
+
