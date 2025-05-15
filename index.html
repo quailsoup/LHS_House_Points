@@ -168,9 +168,11 @@
         }
       },
       scales: {
-        y: {
-          beginatZero: true
-        }
+        yAxes: [{
+          ticks: {
+            beginatZero: true // y axis begins at 0
+          }
+        }]
       }
     });
   }); 
