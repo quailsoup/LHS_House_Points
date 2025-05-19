@@ -1,0 +1,4 @@
+AuthType Basic  
+AuthName "restricted area"  
+AuthUserFile edit_housepoints.html.htpasswd  
+require valid-user
