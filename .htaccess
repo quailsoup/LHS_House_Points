@@ -1,4 +1,4 @@
 AuthType Basic  
 AuthName "restricted area"  
-AuthUserFile edit_housepoints.html.htpasswd  
+AuthUserFile C:\Users\kmegi\OneDrive\Documents\Digital Technology\edit_housepoints.html.htpasswd  
 require valid-user
