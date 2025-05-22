@@ -58,3 +58,33 @@ img.logo {
 .title {
   text-align: center;
 }
+
+img.patikilogo {
+/* patiki logo size */
+  float: left;
+}
+
+img.kuakalogo {
+/* kuaka logo size */
+  float: left;
+}
+
+img.kotarelogo {
+/* kotare logo size */
+  float: left;
+}
+
+img.kahulogo {
+/* kahu logo size */
+  float: left;
+}
+
+img.makologo {
+/* mako logo size */
+  float: left;
+}
+
+img.inakalogo {
+/* inaka logo size */
+  float: left;
+}
