@@ -10,8 +10,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <link rel="stylesheet" href="index.css">
     <link href='https://fonts.googleapis.com/css?family=Archivo' rel='stylesheet'>
+        <style>
+            #container {
+            background-color: #f0f8ff;
+            text-align: center;
+            }
+        </style>
 </head>
 <body>
+     <script>
+         let password = "password";
+        (function passcodeprotect() {
+            let passcode = prompt("Enter Password");
+             while (passcode !== apple) {
+                 alert("Incorrect Password");
+                  return passcodeprotect();
+                    
+             }   
+         }());
+         alert('Welcome to page');
+         document.getElementById("container")
+          .style.display = "block";
+     </script>
     <div class="navbar">
         <!-- navbar page titles -->
         <a href="index.html#" target="_self">House Points</a>

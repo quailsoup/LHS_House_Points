@@ -1,6 +1,0 @@
-<Files edit_housepoints.html>
-AuthType Basic  
-AuthName "restricted area"  
-AuthUserFile C:/Users/kmegi/OneDrive/Documents/Digital Technology/edit_housepoints.htpasswd  
-require valid-user
-</Files>
