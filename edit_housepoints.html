@@ -26,10 +26,10 @@
             // prompt telling the user to enter a password before they can enter the page //
             let passcode = prompt("Enter Password");
             // password //
-             while (passcode !== password) {
+             if (passcode !== password) {
                 // alert shown when incorrect password is entered //
                 window.location.replace("https://quailsoup.github.io/LHS_House_Points/index.html")
-                 alert("Incorrect Password");
+                
                     
              }   
          }());
