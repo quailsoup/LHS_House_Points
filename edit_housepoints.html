@@ -21,8 +21,11 @@
      <script>
          let password = "password";
         (function passcodeprotect() {
+            // prompt telling the user to enter a password before they can enter the page //
             let passcode = prompt("Enter Password");
+            // password //
              while (passcode !== 'apple') {
+                // alert shown when incorrect password is entered //
                  alert("Incorrect Password");
                   return passcodeprotect();
                     
