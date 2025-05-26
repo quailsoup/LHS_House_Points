@@ -42,7 +42,7 @@ const firebaseConfig = {
   let makoCount = 0;
   let inakaCount = 0;
 
-  // Load house point count
+  // Display the house point total count on the editing page
   patikiRef.on('value', snapshot => {
     patikiCount = snapshot.val() || 0;
     patikiCountDisplay.textContent = patikiCount;
@@ -90,8 +90,6 @@ const firebaseConfig = {
   document.getElementById('submit-patiki').addEventListener('click', () => {
     const inputVal = parseInt(patikiInput.value);
 
-  
-    
     if (isNaN(inputVal)) {
       alert("Please enter a valid number of house points.");
       return;

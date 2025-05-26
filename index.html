@@ -85,91 +85,83 @@
     // Load and display the patiki count
     const patikiCountDisplay = document.getElementById('patiki-count');
     const patikiRef = db.ref('votes/patiki');
-    patikiCount = patikiRef.on('value', snapshot => {
+    patikiRef.on('value', snapshot => {
       const patikiCount = snapshot.val() || 0;
       patikiCountDisplay.textContent = patikiCount;
-      return patikiCount
-    });
-
-
-
-    // Load and display the kuaka count
-    const kuakaCountDisplay = document.getElementById('kuaka-count');
-    const kuakaRef = db.ref('votes/kuaka');
-    kuakaCount = kuakaRef.on('value', snapshot => {
-      const kuakaCount = snapshot.val() || 0;
-      kuakaCountDisplay.textContent = kuakaCount;
-      return kuakaCount
-    }); 
-
-    // Load and display the kotare count
-    const kotareCountDisplay = document.getElementById('kotare-count');
-    const kotareRef = db.ref('votes/kotare');
-    kotareCount = kotareRef.on('value', snapshot => {
-      const kotareCount = snapshot.val() || 0;
-      kotareCountDisplay.textContent = kotareCount;
-      return kotareCount
-    });
-
-    // Load and display the kahu count
-    const kahuCountDisplay = document.getElementById('kahu-count');
-    const kahuRef = db.ref('votes/kahu');
-    kahuCount = kahuRef.on('value', snapshot => {
-      const kahuCount = snapshot.val() || 0;
-      kahuCountDisplay.textContent = kahuCount;
-      return kahuCount
-    });
-
-    // Load and display the mako count
-    const makoCountDisplay = document.getElementById('mako-count');
-    const makoRef = db.ref('votes/mako');
-    makoCount = makoRef.on('value', snapshot => {
-      const makoCount = snapshot.val() || 0;
-      makoCountDisplay.textContent = makoCount;
-      return makoCount
-    });
-
-    // Load and display the inaka count
-    const inakaCountDisplay = document.getElementById('inaka-count');
-    const inakaRef = db.ref('votes/inaka');
-    inakaCount = inakaRef.on('value', snapshot => {
-      const inakaCount = snapshot.val() || 0;
-      inakaCountDisplay.textContent = inakaCount;
-      return inakaCount
-    }); 
-
-    // these are the Lincoln High School houses
-    var xValues = ["Pātiki", "Kūaka", "Kōtare", "Kāhu", "Mako", "Īnaka"];
-      // the number of house points
-    var yValues = [patikiCount, kuakaCount, kotareCount, kahuCount, makoCount, inakaCount];
-      // the colours of the houses
-    var barColors = ["#e72d2a", "#f9a245","#fdeb6c","#60ac3f","#00a2b9", "#eda6ac"];
       
-    // display bar chart
-    new Chart("myChart", {
-    type: "bar",
-    data: {
-      labels: xValues,
-      datasets: [{
-        backgroundColor: barColors,
-        data: yValues
-      }]
-    },
-    options: {
-      legend: {display: false},
-      title: {
-        display: true,
-        // title of bar chart
-        text: "House Points 2025"
-    },
-    scales: {
-      yAxes: [{
-        ticks: {
-          min: 0, //y axis has a minimum of 0
-          beginAtZero: true, // y axis begins at 0
-        }
-      }]
-    }}});
+      // Load and display the kuaka count
+      const kuakaCountDisplay = document.getElementById('kuaka-count');
+      const kuakaRef = db.ref('votes/kuaka');
+      kuakaRef.on('value', snapshot => {
+        const kuakaCount = snapshot.val() || 0;
+        kuakaCountDisplay.textContent = kuakaCount;
+        
+        // Load and display the kotare count
+        const kotareCountDisplay = document.getElementById('kotare-count');
+        const kotareRef = db.ref('votes/kotare');
+        kotareRef.on('value', snapshot => {
+          const kotareCount = snapshot.val() || 0;
+          kotareCountDisplay.textContent = kotareCount;
+          
+          // Load and display the kahu count
+          const kahuCountDisplay = document.getElementById('kahu-count');
+          const kahuRef = db.ref('votes/kahu');
+          kahuRef.on('value', snapshot => {
+            const kahuCount = snapshot.val() || 0;
+            kahuCountDisplay.textContent = kahuCount;
+            
+            // Load and display the mako count
+            const makoCountDisplay = document.getElementById('mako-count');
+            const makoRef = db.ref('votes/mako');
+            makoRef.on('value', snapshot => {
+              const makoCount = snapshot.val() || 0;
+              makoCountDisplay.textContent = makoCount;
+              // Load and display the inaka count
+              const inakaCountDisplay = document.getElementById('inaka-count');
+              const inakaRef = db.ref('votes/inaka');
+              inakaRef.on('value', snapshot => {
+                const inakaCount = snapshot.val() || 0;
+                inakaCountDisplay.textContent = inakaCount;
+
+
+                // these are the Lincoln High School houses
+                var xValues = ["Pātiki", "Kūaka", "Kōtare", "Kāhu", "Mako", "Īnaka"];
+                  // the number of house points
+                var yValues = [patikiCount, kuakaCount, kotareCount, kahuCount, makoCount, inakaCount];
+                  // the colours of the houses
+                var barColors = ["#e72d2a", "#f9a245","#fdeb6c","#60ac3f","#00a2b9", "#eda6ac"];
+                  
+                // display bar chart
+                new Chart("myChart", {
+                type: "bar",
+                data: {
+                  labels: xValues,
+                  datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                  }]
+                },
+                options: {
+                  legend: {display: false},
+                  title: {
+                    display: true,
+                    // title of bar chart
+                    text: "House Points 2025"
+                },
+                scales: {
+                  yAxes: [{
+                    ticks: {
+                      min: 0, //y axis has a minimum of 0
+                      beginAtZero: true, // y axis begins at 0
+                    }
+                  }]
+                }}});
+              }); 
+            });
+          });
+        });
+      }); 
+    });
   </script>
 </body>
 </html>
