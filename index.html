@@ -96,7 +96,7 @@
     // Load and display the kuaka count
     const kuakaCountDisplay = document.getElementById('kuaka-count');
     const kuakaRef = db.ref('votes/kuaka');
-    kuakacount = kuakaRef.on('value', snapshot => {
+    kuakaCount = kuakaRef.on('value', snapshot => {
       const kuakaCount = snapshot.val() || 0;
       kuakaCountDisplay.textContent = kuakaCount;
       return kuakaCount
@@ -105,7 +105,7 @@
     // Load and display the kotare count
     const kotareCountDisplay = document.getElementById('kotare-count');
     const kotareRef = db.ref('votes/kotare');
-    kotarecount = kotareRef.on('value', snapshot => {
+    kotareCount = kotareRef.on('value', snapshot => {
       const kotareCount = snapshot.val() || 0;
       kotareCountDisplay.textContent = kotareCount;
       return kotareCount
@@ -114,7 +114,7 @@
     // Load and display the kahu count
     const kahuCountDisplay = document.getElementById('kahu-count');
     const kahuRef = db.ref('votes/kahu');
-    kahucount = kahuRef.on('value', snapshot => {
+    kahuCount = kahuRef.on('value', snapshot => {
       const kahuCount = snapshot.val() || 0;
       kahuCountDisplay.textContent = kahuCount;
       return kahuCount
@@ -123,7 +123,7 @@
     // Load and display the mako count
     const makoCountDisplay = document.getElementById('mako-count');
     const makoRef = db.ref('votes/mako');
-    makocount = makoRef.on('value', snapshot => {
+    makoCount = makoRef.on('value', snapshot => {
       const makoCount = snapshot.val() || 0;
       makoCountDisplay.textContent = makoCount;
       return makoCount
@@ -132,7 +132,7 @@
     // Load and display the inaka count
     const inakaCountDisplay = document.getElementById('inaka-count');
     const inakaRef = db.ref('votes/inaka');
-    inakacount = inakaRef.on('value', snapshot => {
+    inakaCount = inakaRef.on('value', snapshot => {
       const inakaCount = snapshot.val() || 0;
       inakaCountDisplay.textContent = inakaCount;
       return inakaCount
