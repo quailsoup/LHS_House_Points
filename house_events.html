@@ -24,13 +24,37 @@
         <!-- header title/centering and image -->
         <img class="logo" src="lhs_logo.png" alt="logo" style="margin-top: -34px;"/>
         <h1 style="margin: 0 auto; width: fit-content;">House Event Calendar</h1>
-      </div>
+          <!-- Firebase compatibility SDKs for application function-->
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-database-compat.js"></script>
 
-      <div class="title">
-        <!-- calendar title -->
-        <h1>House Event Calendar</h1>
-        <!-- the calendar being displayed -->
-        <!-- <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Pacific%2FAuckland&showPrint=0&src=a21lZ2lic29uNjJAZ21haWwuY29t&src=MmE1MTZmNmQ4OWE2MzAzMGE3Njg1MDJmMWE1YTFjNGI3YjZkNzU4MzIwMDVlOWZjOTFkODgyYzkzNmEyNzU1OUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4ubmV3X3plYWxhbmQjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%23E67C73&color=%230B8043" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe> -->
-      </div>
+  <script>
+    // firebase initialisation
+    const firebaseConfig = {
+      apiKey: "AIzaSyDGkNus0BpWcV68Xhcgl-iWkHNmYbaLDiU",
+      authDomain: "house-points-83688.firebaseapp.com",
+      databaseURL: "https://house-points-83688-default-rtdb.firebaseio.com",
+      projectId: "house-points-83688",
+      storageBucket: "house-points-83688.firebasestorage.app",
+      messagingSenderId: "706900936679",
+      appId: "1:706900936679:web:21e15da81946fb41b29f42",
+      measurementId: "G-83FTQPYTEL"
+    };
+
+    // Initialise Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+        // Load and display the event count
+    const eventDataDisplay = document.getElementById('events');
+    const eventRef = db.ref('events/lhs');
+    eventRef.on('value', snapshot => {
+      const eventData = snapshot.val() || 0;
+      eventDataDisplay.textContent = eventData;
+    });
+
+    
+    </script>
+
     </body>
     </html>

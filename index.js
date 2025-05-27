@@ -10,66 +10,66 @@ const firebaseConfig = {
     measurementId: "G-83FTQPYTEL"
   };
 
-  // Initialise Firebase
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.database();
+// Initialise Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
 
-  const patikiInput = document.getElementById('patiki-input');
-  const kuakaInput = document.getElementById('kuaka-input');
-  const kotareInput = document.getElementById('kotare-input');
-  const kahuInput = document.getElementById('kahu-input');
-  const makoInput = document.getElementById('mako-input');
-  const inakaInput = document.getElementById('inaka-input');
+const patikiInput = document.getElementById('patiki-input');
+const kuakaInput = document.getElementById('kuaka-input');
+const kotareInput = document.getElementById('kotare-input');
+const kahuInput = document.getElementById('kahu-input');
+const makoInput = document.getElementById('mako-input');
+const inakaInput = document.getElementById('inaka-input');
 
-  const patikiCountDisplay = document.getElementById('patiki-count');
-  const kuakaCountDisplay = document.getElementById('kuaka-count');
-  const kotareCountDisplay = document.getElementById('kotare-count');
-  const kahuCountDisplay = document.getElementById('kahu-count');
-  const makoCountDisplay = document.getElementById('mako-count');
-  const inakaCountDisplay = document.getElementById('inaka-count');
+const patikiCountDisplay = document.getElementById('patiki-count');
+const kuakaCountDisplay = document.getElementById('kuaka-count');
+const kotareCountDisplay = document.getElementById('kotare-count');
+const kahuCountDisplay = document.getElementById('kahu-count');
+const makoCountDisplay = document.getElementById('mako-count');
+const inakaCountDisplay = document.getElementById('inaka-count');
 
-  const patikiRef = db.ref('votes/patiki');
-  const kuakaRef = db.ref('votes/kuaka');
-  const kotareRef = db.ref('votes/kotare');
-  const kahuRef = db.ref('votes/kahu');
-  const makoRef = db.ref('votes/mako');
-  const inakaRef = db.ref('votes/inaka');
+const patikiRef = db.ref('votes/patiki');
+const kuakaRef = db.ref('votes/kuaka');
+const kotareRef = db.ref('votes/kotare');
+const kahuRef = db.ref('votes/kahu');
+const makoRef = db.ref('votes/mako');
+const inakaRef = db.ref('votes/inaka');
 
-  let patikiCount = 0;
-  let kuakaCount = 0;
-  let kotareCount = 0;
-  let kahuCount = 0;
-  let makoCount = 0;
-  let inakaCount = 0;
+let patikiCount = 0;
+let kuakaCount = 0;
+let kotareCount = 0;
+let kahuCount = 0;
+let makoCount = 0;
+let inakaCount = 0;
 
-  // Display the house point total count on the editing page
-  patikiRef.on('value', snapshot => {
-    patikiCount = snapshot.val() || 0;
-    patikiCountDisplay.textContent = patikiCount;
-  });
-  kuakaRef.on('value', snapshot => {
-    kuakaCount = snapshot.val() || 0;
-    kuakaCountDisplay.textContent = kuakaCount;
-  });
-  kotareRef.on('value', snapshot => {
-    kotareCount = snapshot.val() || 0;
-    kotareCountDisplay.textContent = kotareCount;
-  });
-  kahuRef.on('value', snapshot => {
-    kahuCount = snapshot.val() || 0;
-    kahuCountDisplay.textContent = kahuCount;
-  });
-  makoRef.on('value', snapshot => {
-    makoCount = snapshot.val() || 0;
-    makoCountDisplay.textContent = makoCount;
-  });
-  inakaRef.on('value', snapshot => {
-    inakaCount = snapshot.val() || 0;
-    inakaCountDisplay.textContent = inakaCount;
-  });
+// Display the house point total count on the editing page
+patikiRef.on('value', snapshot => {
+  patikiCount = snapshot.val() || 0;
+  patikiCountDisplay.textContent = patikiCount;
+});
+kuakaRef.on('value', snapshot => {
+  kuakaCount = snapshot.val() || 0;
+  kuakaCountDisplay.textContent = kuakaCount;
+});
+kotareRef.on('value', snapshot => {
+  kotareCount = snapshot.val() || 0;
+  kotareCountDisplay.textContent = kotareCount;
+});
+kahuRef.on('value', snapshot => {
+  kahuCount = snapshot.val() || 0;
+  kahuCountDisplay.textContent = kahuCount;
+});
+makoRef.on('value', snapshot => {
+  makoCount = snapshot.val() || 0;
+  makoCountDisplay.textContent = makoCount;
+});
+inakaRef.on('value', snapshot => {
+  inakaCount = snapshot.val() || 0;
+  inakaCountDisplay.textContent = inakaCount;
+});
 
 
-  // Submit patiki house points
+  // reset patiki house points
   document.getElementById("reset-patiki").addEventListener("click", function() {
   // Ask user if they want to reset the house points
     const confirmed = confirm("Are you sure you want to reset Pātiki's points to 0?");
@@ -87,6 +87,7 @@ const firebaseConfig = {
       });
   }
   });
+  // submit patiki house points
   document.getElementById('submit-patiki').addEventListener('click', () => {
     const inputVal = parseInt(patikiInput.value);
 
@@ -105,7 +106,7 @@ const firebaseConfig = {
     patikiInput.value = ""; // Clears the box after input   
 });
 
-// Submit kuaka house points
+// reset kuaka house points
   document.getElementById("reset-kuaka").addEventListener("click", function() {
   // Ask user if they want to reset the house points
     const confirmed = confirm("Are you sure you want to reset Kūaka's points to 0?");
@@ -123,6 +124,7 @@ const firebaseConfig = {
       });
   }
   });
+// submit kuaka house points
 document.getElementById('submit-kuaka').addEventListener('click', () => {
     const inputkuakaVal = parseInt(kuakaInput.value);
     
@@ -141,7 +143,7 @@ document.getElementById('submit-kuaka').addEventListener('click', () => {
     kuakaInput.value = ""; // Clears the box after input
 });
 
-// Submit kotare house points
+// reset kotare house points
   document.getElementById("reset-kotare").addEventListener("click", function() {
   // Ask user if they want to reset the house points
     const confirmed = confirm("Are you sure you want to reset Kōtare's points to 0?");
@@ -159,7 +161,7 @@ document.getElementById('submit-kuaka').addEventListener('click', () => {
       });
   }
   });
-
+// submit kotare house points
 document.getElementById('submit-kotare').addEventListener('click', () => {
   const inputkotareVal = parseInt(kotareInput.value);
   
@@ -178,7 +180,7 @@ document.getElementById('submit-kotare').addEventListener('click', () => {
   kotareInput.value = ""; // Clears the box after input
 });
 
-// Submit kahu house points
+// reset kahu house points
   document.getElementById("reset-kahu").addEventListener("click", function() {
   // Ask user if they want to reset the house points
     const confirmed = confirm("Are you sure you want to reset Kāhu's points to 0?");
@@ -196,7 +198,7 @@ document.getElementById('submit-kotare').addEventListener('click', () => {
       });
   }
   });
-
+// submit kahu house points
 document.getElementById('submit-kahu').addEventListener('click', () => {
   const inputkahuVal = parseInt(kahuInput.value);
   
@@ -215,7 +217,7 @@ document.getElementById('submit-kahu').addEventListener('click', () => {
   kahuInput.value = ""; // Clears the box after input
 });
 
-// Submit mako house points
+// reset mako house points
   document.getElementById("reset-mako").addEventListener("click", function() {
   // Ask user if they want to reset the house points
     const confirmed = confirm("Are you sure you want to reset Mako's points to 0?");
@@ -233,7 +235,7 @@ document.getElementById('submit-kahu').addEventListener('click', () => {
       });
   }
   });
-
+// submit mako house points
 document.getElementById('submit-mako').addEventListener('click', () => {
   const inputmakoVal = parseInt(makoInput.value);
   
@@ -253,7 +255,7 @@ document.getElementById('submit-mako').addEventListener('click', () => {
 });
 
 
-// Submit inaka house points
+// reset inaka house points
   document.getElementById("reset-inaka").addEventListener("click", function() {
   // Ask user if they want to reset the house points
     const confirmed = confirm("Are you sure you want to reset Īnaka's points to 0?");
@@ -271,7 +273,7 @@ document.getElementById('submit-mako').addEventListener('click', () => {
       });
   }
   });
-
+// submit inaka house points
 document.getElementById('submit-inaka').addEventListener('click', () => {
   const inputinakaVal = parseInt(inakaInput.value);
   
@@ -288,6 +290,29 @@ document.getElementById('submit-inaka').addEventListener('click', () => {
   // add to house points already submitted
   inakaRef.transaction(current => (current || 0) + inputinakaVal);
   inakaInput.value = ""; // Clears the box after input
+});
 
+const eventInput = document.getElementById('event-input');
+
+const eventDataDisplay = document.getElementById('events');
+
+const eventRef = db.ref('events/lhs');
+
+let eventData = "No events registerd";
+
+eventRef.on('value', snapshot => {
+  eventData = snapshot.val();
+  eventInput.value = eventData;
+});
+
+document.getElementById('submit-event').addEventListener('click', () => {
+  const inputVal = eventInput.value.trim();
+
+  if (!inputVal) {
+    alert("Please enter a valid event name.");
+    return;
+  }
+
+  eventRef.set(inputVal); // just store the string
 });
 

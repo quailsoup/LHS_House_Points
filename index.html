@@ -86,6 +86,7 @@
     const patikiCountDisplay = document.getElementById('patiki-count');
     const patikiRef = db.ref('votes/patiki');
     patikiRef.on('value', snapshot => {
+      // set patikiCount to the value in the database, otherwise set it as 0
       const patikiCount = snapshot.val() || 0;
       patikiCountDisplay.textContent = patikiCount;
       
@@ -100,6 +101,7 @@
         const kotareCountDisplay = document.getElementById('kotare-count');
         const kotareRef = db.ref('votes/kotare');
         kotareRef.on('value', snapshot => {
+          // set kotareCount to the value in the database, otherwise set it as 0
           const kotareCount = snapshot.val() || 0;
           kotareCountDisplay.textContent = kotareCount;
           
@@ -107,6 +109,7 @@
           const kahuCountDisplay = document.getElementById('kahu-count');
           const kahuRef = db.ref('votes/kahu');
           kahuRef.on('value', snapshot => {
+            // set kahuCount to the value in the database, otherwise set it as 0
             const kahuCount = snapshot.val() || 0;
             kahuCountDisplay.textContent = kahuCount;
             
@@ -114,12 +117,14 @@
             const makoCountDisplay = document.getElementById('mako-count');
             const makoRef = db.ref('votes/mako');
             makoRef.on('value', snapshot => {
+              // set makoCount to the value in the database, otherwise set it as 0
               const makoCount = snapshot.val() || 0;
               makoCountDisplay.textContent = makoCount;
               // Load and display the inaka count
               const inakaCountDisplay = document.getElementById('inaka-count');
               const inakaRef = db.ref('votes/inaka');
               inakaRef.on('value', snapshot => {
+                // set inakaCount to the value in the database, otherwise set it as 0
                 const inakaCount = snapshot.val() || 0;
                 inakaCountDisplay.textContent = inakaCount;
 
