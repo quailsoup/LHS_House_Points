@@ -48,12 +48,6 @@
 
     // Load and display the events
     const eventDataDisplay = document.getElementById('events');
-    if (!eventDataDisplay) {
-      console.error("Events not found")
-    }
-    eventRef.once('value').then(snapshot => {
-      console.log(snapshot.val());
-    });
     const eventRef = db.ref('events/lhs');
     eventRef.on('value', snapshot => {
       const eventData = snapshot.val() || 0;
