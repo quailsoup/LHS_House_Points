@@ -25,6 +25,11 @@
         <!-- header title/centering and image -->
         <img class="logo" src="lhs_logo.png" alt="logo" style="margin-top: -34px;"/>
         <h1 style="margin: 0 auto; width: fit-content;">House Event Calendar</h1>
+        <h2>
+          <div id="events">
+            Loading...
+          </div>
+        </h2>
           <!-- Firebase compatibility SDKs for application function-->
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-database-compat.js"></script>
@@ -46,11 +51,6 @@
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
     
-    <h2>
-      <div id="events">
-        Loading...
-      </div>
-    </h2>
     
     // Load and display the events
     const eventDataDisplay = document.getElementById('events');
