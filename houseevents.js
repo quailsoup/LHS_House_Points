@@ -12,5 +12,21 @@ eventRef.on('value', snapshot => {
     console.error("Display not found")
   }
 });
+document.getElementById('submit-event').addEventListener('click', () => {
+const inputVal = eventInput.value.trim();
 
+if (!inputVal) {
+  alert("Please enter a valid event name.");
+  return;
+}
+
+  eventRef.set(inputVal) // just store the string
+    .then(() => {
+    console.log("Data saved successfully");
+    }
+  )
+  .catch((error) => {
+    console.error("Error saving data");
+  });
+});
 
