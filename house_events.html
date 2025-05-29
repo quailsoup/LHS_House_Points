@@ -28,12 +28,7 @@
           <!-- Firebase compatibility SDKs for application function-->
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-database-compat.js"></script>
-  <h2>
-    <div id="events">
-      Loading...
-    </div>
-  </h2>
-
+  
   <script>
     // firebase initialisation
     const firebaseConfig = {
@@ -46,12 +41,17 @@
       appId: "1:706900936679:web:21e15da81946fb41b29f42",
       measurementId: "G-83FTQPYTEL"
     };
-
+    
     // Initialise Firebase
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
-
-
+    
+    <h2>
+      <div id="events">
+        Loading...
+      </div>
+    </h2>
+    
     // Load and display the events
     const eventDataDisplay = document.getElementById('events');
     const eventRef = db.ref('events/lhs');
