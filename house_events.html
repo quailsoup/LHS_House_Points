@@ -46,11 +46,11 @@
     const db = firebase.database();
 
     // Load and display the events
-    const eventDataDisplay = document.getElementById('events');
     const eventRef = db.ref('events/lhs');
     eventRef.on('value', snapshot => {
       const eventData = snapshot.val() || 0;
       eventDataDisplay.textContent = eventData;
+      const eventDataDisplay = document.getElementById('events');
     });
 
     

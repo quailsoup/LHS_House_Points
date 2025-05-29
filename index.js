@@ -303,13 +303,13 @@ eventRef.on('value', snapshot => {
   eventInput.value = eventData;
 });
 
+document.getElementById('submit-event').addEventListener('click', () => {
 const inputVal = eventInput.value.trim();
 
 if (!inputVal) {
   alert("Please enter a valid event name.");
   return;
 }
-document.getElementById('submit-event').addEventListener('click', () => {
 
   eventRef.set(inputVal); // just store the string
 });
