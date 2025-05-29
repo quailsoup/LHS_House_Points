@@ -298,7 +298,7 @@ const eventDataDisplay = document.getElementById('events');
 
 const eventRef = db.ref('events/lhs');
 
-let eventData = "No events registerd";
+let eventData = "No events registered";
 
 eventRef.on('value', snapshot => {
   eventData = snapshot.val();

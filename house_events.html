@@ -28,6 +28,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-database-compat.js"></script>
 
+  <h2>
   <script>
     // firebase initialisation
     const firebaseConfig = {
@@ -45,7 +46,7 @@
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
 
-        // Load and display the event count
+    // Load and display the events
     const eventDataDisplay = document.getElementById('events');
     const eventRef = db.ref('events/lhs');
     eventRef.on('value', snapshot => {
@@ -55,6 +56,8 @@
 
     
     </script>
+    </h2>
+    
 
     </body>
     </html>
