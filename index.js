@@ -292,12 +292,6 @@ document.getElementById('submit-inaka').addEventListener('click', () => {
   inakaInput.value = ""; // Clears the box after input
 });
 
-const eventInput = document.getElementById('event-input');
-if (eventInput) {
- eventInput.textContent = "Event" 
-} else {
-  console.error("Not found");
-}
 
 const eventDataDisplay = document.getElementById('events');
 
