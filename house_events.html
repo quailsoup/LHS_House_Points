@@ -45,12 +45,16 @@
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
 
+
     // Load and display the events
+    const eventDataDisplay = document.getElementById('events');
+    if (!eventDataDisplay) {
+      console.error("Events not found")
+    }
     const eventRef = db.ref('events/lhs');
     eventRef.on('value', snapshot => {
       const eventData = snapshot.val() || 0;
       eventDataDisplay.textContent = eventData;
-      const eventDataDisplay = document.getElementById('events');
     });
 
     
