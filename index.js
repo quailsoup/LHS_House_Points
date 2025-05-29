@@ -322,6 +322,6 @@ if (!inputVal) {
   )
   .catch((error) => {
     console.error("Error saving data");
-  })
+  });
 });
 
