@@ -315,6 +315,13 @@ if (!inputVal) {
   return;
 }
 
-  eventRef.set(inputVal); // just store the string
+  eventRef.set(inputVal) // just store the string
+    .then(() => {
+    console.log("Data saved successfully");
+    }
+  )
+  .catch((error) => {
+    console.error("Error saving data");
+  })
 });
 
