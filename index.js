@@ -292,7 +292,6 @@ document.getElementById('submit-inaka').addEventListener('click', () => {
   inakaInput.value = ""; // Clears the box after input
 });
 
-
 const eventDataDisplay = document.getElementById('events');
 
 const eventRef = db.ref('events/lhs');
@@ -304,13 +303,13 @@ eventRef.on('value', snapshot => {
   eventInput.value = eventData;
 });
 
-document.getElementById('submit-event').addEventListener('click', () => {
-  const inputVal = eventInput.value.trim();
+const inputVal = eventInput.value.trim();
 
-  if (!inputVal) {
-    alert("Please enter a valid event name.");
-    return;
-  }
+if (!inputVal) {
+  alert("Please enter a valid event name.");
+  return;
+}
+document.getElementById('submit-event').addEventListener('click', () => {
 
   eventRef.set(inputVal); // just store the string
 });
