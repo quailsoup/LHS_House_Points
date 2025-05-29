@@ -49,6 +49,9 @@
 
 
     // Load and display the events
+    document.addEventListener('DOMContentLoaded', () => {
+
+    })
     const eventDataDisplay = document.getElementById('events');
     const eventRef = db.ref('events/lhs');
     eventRef.on('value', snapshot => {
