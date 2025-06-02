@@ -294,6 +294,10 @@ document.getElementById('submit-inaka').addEventListener('click', () => {
 
 const eventDataDisplay = document.getElementById('events');
 const eventInput = document.getElementById("event-input")
+const eventDraft = localStorage.getItem('draft')
+if (eventInput && eventDraft !== null) {
+  eventInput.value = eventDraft;
+}
 
 const eventRef = db.ref('events/lhs');
 
@@ -306,6 +310,13 @@ eventRef.on('value', snapshot => {
     console.error("Display not found")
   }
 });
+
+if (eventInput) {
+  eventInput.addEventListener('input', () => {
+    localStorage.setItem('draft', eventInput.value);
+  })
+}
+
 document.getElementById('submit-event').addEventListener('click', () => {
 const inputVal = eventInput.value.trim();
 
