@@ -297,7 +297,7 @@ const eventInput = document.getElementById("event-input")
 
 const eventRef = db.ref('events/lhs');
 
-
+// notify if there are no events registered or the display does not load
 eventRef.on('value', snapshot => {
   const eventData = snapshot.val() || "No events registered"
   if (eventDataDisplay) {
@@ -309,6 +309,7 @@ eventRef.on('value', snapshot => {
 document.getElementById('submit-event').addEventListener('click', () => {
 const inputVal = eventInput.value.trim();
 
+// allow a valid event name to be entered
 if (!inputVal) {
   alert("Please enter a valid event name.");
   return;
@@ -316,9 +317,11 @@ if (!inputVal) {
 
   eventRef.set(inputVal) // just store the string
     .then(() => {
+      // notify if the data is saved successfully
     console.log("Data saved successfully");
     }
   )
+  // notify if there is an error saving the data
   .catch((error) => {
     console.error("Error saving data");
   });

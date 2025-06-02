@@ -94,6 +94,7 @@
       const kuakaCountDisplay = document.getElementById('kuaka-count');
       const kuakaRef = db.ref('votes/kuaka');
       kuakaRef.on('value', snapshot => {
+        // set kuakaCount to the value in the database, otherwise set it as 0
         const kuakaCount = snapshot.val() || 0;
         kuakaCountDisplay.textContent = kuakaCount;
         
@@ -120,6 +121,7 @@
               // set makoCount to the value in the database, otherwise set it as 0
               const makoCount = snapshot.val() || 0;
               makoCountDisplay.textContent = makoCount;
+
               // Load and display the inaka count
               const inakaCountDisplay = document.getElementById('inaka-count');
               const inakaRef = db.ref('votes/inaka');
