@@ -294,6 +294,7 @@ document.getElementById('submit-inaka').addEventListener('click', () => {
 
 const eventDataDisplay = document.getElementById('events');
 const eventInput = document.getElementById("event-input")
+// allow the submitted text and draft to save and appear when page is reloaded
 const eventDraft = localStorage.getItem('draft')
 if (eventInput && eventDraft !== null) {
   eventInput.value = eventDraft;
