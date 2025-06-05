@@ -293,7 +293,7 @@ document.getElementById('submit-inaka').addEventListener('click', () => {
 });
 
 const eventDataDisplay = document.getElementById('events');
-const eventInput = document.getElementById("event-input")
+const eventInput = document.getElementById("event-input");
 // allow the submitted text and draft to save and appear when page is reloaded
 const eventDraft = localStorage.getItem('draft')
 if (eventInput && eventDraft !== null) {
@@ -311,6 +311,17 @@ eventRef.on('value', snapshot => {
     console.error("Display not found")
   }
 });
+
+if (eventData) {
+  snapshot.forEach((childSnapshot) => {
+    const eventText = childSnapshot.val();
+    const eventKey = childSnapshot.key;
+    const eventParagraph = document.createElement('p');
+    eventParagraph.textContent = eventParagraph;
+    eventDataDisplay.appendChild(eventParagraph);
+  });
+  }
+
 
 if (eventInput) {
   eventInput.addEventListener('input', () => {
