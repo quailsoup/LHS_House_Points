@@ -3,6 +3,7 @@ body {
   margin: 0;
   /* font style */
   font-family: 'Archivo';
+  overflow-x: hidden;
 }
 .header {
   padding: 80px;
@@ -15,8 +16,7 @@ img.logo {
   height: 25%;
   width: 25%;
   float: left;
-}
-  
+}  
 .header h1 {
   /* header font size*/
   font-size: 40px;
@@ -47,4 +47,25 @@ img.logo {
 /* alignment of page title */
 .title {
   text-align: center;
+}
+.display-image {
+  /* position of house design image */
+position: relative;
+/* allows image to be on the same line as well as setting dimensions */
+display: inline-block;
+}
+img.design {
+  /* width of house design image */
+  width: 200%;
+  /* opacity of house design image */
+  filter: opacity(20%);
+}
+pre#events {
+  /* position of house event text */
+  position: absolute;
+  z-index: 2;
+  /* font of event text */
+  font-family: 'Archivo';
+  margin-left: 5px;
+
 }
