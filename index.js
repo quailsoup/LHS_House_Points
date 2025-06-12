@@ -297,6 +297,7 @@ const eventInput = document.getElementById("event-input");
 // allow the submitted text and draft to save and appear when page is reloaded
 const eventDraft = localStorage.getItem('draft')
 if (eventInput && eventDraft !== null) {
+  // setting input text to saved data
   eventInput.value = eventDraft;
 }
 
@@ -306,22 +307,12 @@ const eventRef = db.ref('events/lhs');
 eventRef.on('value', snapshot => {
   const eventData = snapshot.val() || "No events registered"
   if (eventDataDisplay) {
+    // displaying data on house events page
     eventDataDisplay.textContent = eventData;
   } else {
     console.error("Display not found")
   }
 });
-
-if (eventData) {
-  snapshot.forEach((childSnapshot) => {
-    const eventText = childSnapshot.val();
-    const eventKey = childSnapshot.key;
-    const eventParagraph = document.createElement('p');
-    eventParagraph.textContent = eventParagraph;
-    eventDataDisplay.appendChild(eventParagraph);
-  });
-  }
-
 
 if (eventInput) {
   eventInput.addEventListener('input', () => {
