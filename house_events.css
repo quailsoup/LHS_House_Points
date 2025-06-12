@@ -66,6 +66,7 @@ pre#events {
   z-index: 2;
   /* font of event text */
   font-family: 'Archivo';
-  margin-left: 5px;
+  margin-top: 15px;
+  margin-left: 15px;
 
 }
