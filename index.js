@@ -294,31 +294,7 @@ document.getElementById('submit-inaka').addEventListener('click', () => {
 
 const eventDataDisplay = document.getElementById('events');
 const eventInput = document.getElementById("event-input");
-// allow the submitted text and draft to save and appear when page is reloaded
-const eventDraft = localStorage.getItem('draft')
-if (eventInput && eventDraft !== null) {
-  // setting input text to saved data
-  eventInput.value = eventDraft;
-}
 
-const eventRef = db.ref('events/lhs');
-
-// notify if there are no events registered or the display does not load
-eventRef.on('value', snapshot => {
-  const eventData = snapshot.val() || "No events registered"
-  if (eventDataDisplay) {
-    // displaying data on house events page
-    eventDataDisplay.textContent = eventData;
-  } else {
-    console.error("Display not found")
-  }
-});
-
-if (eventInput) {
-  eventInput.addEventListener('input', () => {
-    localStorage.setItem('draft', eventInput.value);
-  })
-}
 
 document.getElementById('submit-event').addEventListener('click', () => {
 const inputVal = eventInput.value.trim();
@@ -329,15 +305,23 @@ if (!inputVal) {
   return;
 }
 
-  eventRef.set(inputVal) // just store the string
-    .then(() => {
-      // notify if the data is saved successfully
-    console.log("Data saved successfully");
+eventRef.set(inputVal) // just store the string
+.then(() => {
+  // notify if the data is saved successfully
+  console.log("Data saved successfully");
     }
   )
   // notify if there is an error saving the data
   .catch((error) => {
     console.error("Error saving data");
   });
+});
+
+// make the events submitted display on the house events page and also remain in the text box
+eventDataInputShow = document.getElementById('event-input')
+const eventRef = db.ref('events/lhs');
+eventRef.on('value', snapshot => {
+  eventDataShow = snapshot.val() || 0;
+  eventDataInputShow.textContent = eventDataShow;
 });
 
