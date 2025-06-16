@@ -100,10 +100,25 @@ inakaRef.on('value', snapshot => {
       if (confirmed === false) {
         return;
       }
-    }
+    } 
+    Toastify({
+      // getting the input that are blank
+      text: 'Saved Pātiki House Points Successfully!',
+      duration: 2500,
+      close: true,
+      gravity: "bottom", // if the notification is displayed at the top or bottom of the screen
+      position: "left", // if the notification is displayed at the left, right, or centre of the page
+      stopOnFocus: true, // Makes sure notification doesn't disappear when hovered.
+      className: "message", // extra css styling in the index.css
+      style: {
+          background: "linear-gradient(330deg,rgb(0, 255, 42), rgb(102, 243, 120))", // notification colour
+      },
+      onClick: function(){} // Callback after click
+  }).showToast(); // displaying the notification text
     
     patikiRef.transaction(current => (current || 0) + inputVal);
     patikiInput.value = ""; // Clears the box after input   
+
 });
 
 // reset kuaka house points
@@ -138,7 +153,22 @@ document.getElementById('submit-kuaka').addEventListener('click', () => {
         return;
       }
     }
-    
+      // making a toast notification
+  Toastify({
+      // getting the input that are blank
+      text: 'Saved Kūaka House Points Successfully!',
+      duration: 2500,
+      close: true,
+      gravity: "bottom", // if the notification is displayed at the top or bottom of the screen
+      position: "left", // if the notification is displayed at the left, right, or centre of the page
+      stopOnFocus: true, // Makes sure notification doesn't disappear when hovered.
+      className: "message", // extra css styling in the index.css
+      style: {
+          background: "linear-gradient(330deg,rgb(0, 255, 42), rgb(102, 243, 120))", // notification colour
+      },
+      onClick: function(){} // Callback after click
+  }).showToast(); // displaying the notification text
+
     kuakaRef.transaction(current => (current || 0) + inputkuakaVal);
     kuakaInput.value = ""; // Clears the box after input
 });
@@ -175,6 +205,21 @@ document.getElementById('submit-kotare').addEventListener('click', () => {
       return;
     }
   }
+   // making a toast notification
+  Toastify({
+      // getting the input that are blank
+      text: 'Saved Kōtare House Points Successfully!',
+      duration: 2500,
+      close: true,
+      gravity: "bottom", // if the notification is displayed at the top or bottom of the screen
+      position: "left", // if the notification is displayed at the left, right, or centre of the page
+      stopOnFocus: true, // Makes sure notification doesn't disappear when hovered.
+      className: "message", // extra css styling in the index.css
+      style: {
+          background: "linear-gradient(330deg,rgb(0, 255, 42), rgb(102, 243, 120))", // notification colour
+      },
+      onClick: function(){} // Callback after click
+  }).showToast(); // displaying the notification text
   
   kotareRef.transaction(current => (current || 0) + inputkotareVal);
   kotareInput.value = ""; // Clears the box after input
@@ -212,6 +257,21 @@ document.getElementById('submit-kahu').addEventListener('click', () => {
       return;
     }
   }
+    // making a toast notification
+  Toastify({
+      // getting the input that are blank
+      text: 'Saved Kāhu House Points Successfully!',
+      duration: 2500,
+      close: true,
+      gravity: "bottom", // if the notification is displayed at the top or bottom of the screen
+      position: "left", // if the notification is displayed at the left, right, or centre of the page
+      stopOnFocus: true, // Makes sure notification doesn't disappear when hovered.
+      className: "message", // extra css styling in the index.css
+      style: {
+          background: "linear-gradient(330deg,rgb(0, 255, 42), rgb(102, 243, 120))", // notification colour
+      },
+      onClick: function(){} // Callback after click
+  }).showToast(); // displaying the notification text
   
   kahuRef.transaction(current => (current || 0) + inputkahuVal);
   kahuInput.value = ""; // Clears the box after input
@@ -249,6 +309,21 @@ document.getElementById('submit-mako').addEventListener('click', () => {
       return;
     }
   }
+    // making a toast notification
+  Toastify({
+      // getting the input that are blank
+      text: 'Saved Mako House Points Successfully!',
+      duration: 2500,
+      close: true,
+      gravity: "bottom", // if the notification is displayed at the top or bottom of the screen
+      position: "left", // if the notification is displayed at the left, right, or centre of the page
+      stopOnFocus: true, // Makes sure notification doesn't disappear when hovered.
+      className: "message", // extra css styling in the index.css
+      style: {
+          background: "linear-gradient(330deg,rgb(0, 255, 42), rgb(102, 243, 120))", // notification colour
+      },
+      onClick: function(){} // Callback after click
+  }).showToast(); // displaying the notification text
   
   makoRef.transaction(current => (current || 0) + inputmakoVal);
   makoInput.value = ""; // Clears the box after input
@@ -287,6 +362,22 @@ document.getElementById('submit-inaka').addEventListener('click', () => {
       return;
     }
   }
+  // making a toast notification
+  Toastify({
+      // getting the input that are blank
+      text: 'Saved Īnaka House Points Successfully!',
+      duration: 2500,
+      close: true,
+      gravity: "bottom", // if the notification is displayed at the top or bottom of the screen
+      position: "left", // if the notification is displayed at the left, right, or centre of the page
+      stopOnFocus: true, // Makes sure notification doesn't disappear when hovered.
+      className: "message", // extra css styling in the index.css
+      style: {
+          background: "linear-gradient(330deg,rgb(0, 255, 42), rgb(102, 243, 120))", // notification colour
+      },
+      onClick: function(){} // Callback after click
+  }).showToast(); // displaying the notification text
+
   // add to house points already submitted
   inakaRef.transaction(current => (current || 0) + inputinakaVal);
   inakaInput.value = ""; // Clears the box after input
@@ -307,13 +398,43 @@ if (!inputVal) {
 
 eventRef.set(inputVal) // just store the string
 .then(() => {
-  // notify if the data is saved successfully
+  // notify in the console if the data is saved successfully
   console.log("Data saved successfully");
+  // making a toast notification
+  Toastify({
+      // getting the input that are blank
+      text: 'Saved House Events Successfully!',
+      duration: 2500,
+      close: true,
+      gravity: "bottom", // if the notification is displayed at the top or bottom of the screen
+      position: "left", // if the notification is displayed at the left, right, or centre of the page
+      stopOnFocus: true, // Makes sure notification doesn't disappear when hovered.
+      className: "message", // extra css styling in the index.css
+      style: {
+          background: "linear-gradient(330deg,rgb(0, 255, 42), rgb(102, 243, 120))", // notification colour
+      },
+      onClick: function(){} // Callback after click
+  }).showToast(); // displaying the notification text
     }
   )
-  // notify if there is an error saving the data
+  // notify in the console if there is an error saving the data
   .catch((error) => {
     console.error("Error saving data");
+      // making a toast notification
+        Toastify({
+            // getting the input that are blank
+            text: 'Error Saving Data!',
+            duration: 2500,
+            close: true,
+            gravity: "bottom", // if the notification is displayed at the top or bottom of the screen
+            position: "left", // if the notification is displayed at the left, right, or centre of the page
+            stopOnFocus: true, // Makes sure notification doesn't disappear when hovered.
+            className: "message", // extra css styling in the index.css
+            style: {
+                background: "linear-gradient(330deg, red)", // notification colour
+            },
+            onClick: function(){} // Callback after click
+        }).showToast(); // displaying the notification text
   });
 });
 
