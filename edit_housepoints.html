@@ -48,10 +48,18 @@
       </div>
       
     <div class="title">
-        <h1>House Points</h1>
+        <h1>Edit House Points</h1>
     </div>
 
-    <div style="margin:10px">
+    <div class="container">
+        
+            <div class="item" style="float: right;">
+                <!-- text box for submission of house events -->
+                 <h2 style="margin: 10px; width: 20%;"> Events Submission</h2>
+                <textarea style="height: 300px; width: 500px; margin: 10px;" type="text" id="event-input"></textarea>
+                <button id="submit-event" class="submit-button">Submit</button>
+            </div>
+    <div style="margin:10px; width: 20%; min-width: 100px;" class="item">
         <!-- allow house points to be entered for Patiki -->
             <h2><img src="Pātiki.jpg" alt="patikilogo" style="width: 80px;">How many Pātiki house points do you want to submit?</h2>
 
@@ -106,12 +114,6 @@
             <!-- display of inaka house point value -->
             <p>Īnaka Total: <span class="count" id="inaka-count">0</span> house points</p>
     </div>
-
-    <div>
-        <!-- text box for submission of house events -->
-         <h2 style="margin: 10px;"> Events</h2>
-        <textarea style="height: 300px; width: 500px; margin: 10px;" type="text" id="event-input"></textarea>
-        <button id="submit-event" class="submit-button">Submit</button>
     </div>
     
     <!-- Firebase compat SDKs for app functionality -->
