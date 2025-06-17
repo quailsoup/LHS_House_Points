@@ -111,7 +111,7 @@ inakaRef.on('value', snapshot => {
       stopOnFocus: true, // Makes sure notification doesn't disappear when hovered.
       className: "message", // extra css styling in the index.css
       style: {
-          background: "linear-gradient(330deg,rgb(0, 255, 42), rgb(102, 243, 120))", // notification colour
+          background: "#EF2D2D", // notification colour
       },
       onClick: function(){} // Callback after click
   }).showToast(); // displaying the notification text
@@ -164,7 +164,7 @@ document.getElementById('submit-kuaka').addEventListener('click', () => {
       stopOnFocus: true, // Makes sure notification doesn't disappear when hovered.
       className: "message", // extra css styling in the index.css
       style: {
-          background: "linear-gradient(330deg,rgb(0, 255, 42), rgb(102, 243, 120))", // notification colour
+          background: "#F9A245", // notification colour
       },
       onClick: function(){} // Callback after click
   }).showToast(); // displaying the notification text
@@ -216,7 +216,7 @@ document.getElementById('submit-kotare').addEventListener('click', () => {
       stopOnFocus: true, // Makes sure notification doesn't disappear when hovered.
       className: "message", // extra css styling in the index.css
       style: {
-          background: "linear-gradient(330deg,rgb(0, 255, 42), rgb(102, 243, 120))", // notification colour
+          background: "#FDED74", // notification colour
       },
       onClick: function(){} // Callback after click
   }).showToast(); // displaying the notification text
@@ -268,7 +268,7 @@ document.getElementById('submit-kahu').addEventListener('click', () => {
       stopOnFocus: true, // Makes sure notification doesn't disappear when hovered.
       className: "message", // extra css styling in the index.css
       style: {
-          background: "linear-gradient(330deg,rgb(0, 255, 42), rgb(102, 243, 120))", // notification colour
+          background: "#60AC3F", // notification colour
       },
       onClick: function(){} // Callback after click
   }).showToast(); // displaying the notification text
@@ -320,7 +320,7 @@ document.getElementById('submit-mako').addEventListener('click', () => {
       stopOnFocus: true, // Makes sure notification doesn't disappear when hovered.
       className: "message", // extra css styling in the index.css
       style: {
-          background: "linear-gradient(330deg,rgb(0, 255, 42), rgb(102, 243, 120))", // notification colour
+          background: "#00A2B9", // notification colour
       },
       onClick: function(){} // Callback after click
   }).showToast(); // displaying the notification text
@@ -373,7 +373,7 @@ document.getElementById('submit-inaka').addEventListener('click', () => {
       stopOnFocus: true, // Makes sure notification doesn't disappear when hovered.
       className: "message", // extra css styling in the index.css
       style: {
-          background: "linear-gradient(330deg,rgb(0, 255, 42), rgb(102, 243, 120))", // notification colour
+          background: "#EBA2A9", // notification colour
       },
       onClick: function(){} // Callback after click
   }).showToast(); // displaying the notification text
