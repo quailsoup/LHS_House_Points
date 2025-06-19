@@ -89,4 +89,6 @@ margin: auto;
   margin-left: auto;
   margin-right: auto;
 }
-
+th, td {
+  padding: 20px;
+}
