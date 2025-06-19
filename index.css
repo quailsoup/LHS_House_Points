@@ -85,4 +85,8 @@ img.inakalogo {
 width: 50%;
 margin: auto;
 }
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
 
