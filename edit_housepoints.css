@@ -90,15 +90,4 @@ img.inakalogo {
 /* inaka logo placement */
   float: left;
 }
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-.item {
-  padding: 10px;
-  width: 20%;
-}
-.item:last-child {
-  width: 30%;
-}
+
