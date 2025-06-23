@@ -6,6 +6,7 @@ body {
   overflow-x: hidden;
 }
 .header {
+  /* header style */
   padding: 80px;
   text-align: center;
   background: #A5182D;
