@@ -5,6 +5,7 @@ body {
   font-family: 'Archivo';
   overflow-x: hidden;
 }
+
 .header {
   /* header style */
   padding: 80px;
@@ -12,26 +13,29 @@ body {
   background: #A5182D;
   color: white;
 }
+
 img.logo {
   /*LHS logo size */
   height: 25%;
   width: 25%;
   float: left;
 }  
+
 .header h1 {
   /* header font size*/
   font-size: 40px;
   /*header position */
   text-align: center;
 }
-/* top navigation bar colour */
+
 .navbar {
+  /* top navigation bar colour */
   overflow: hidden;
   background-color: #a5182d;
 }
 
-/* Link colours */
 .navbar a {
+  /* Link colours and styling */
   float: left;
   display: block;
   color: white;
@@ -40,27 +44,31 @@ img.logo {
   text-decoration: none;
 }
 
-/* Change colour of links on hover */
 .navbar a:hover {
+  /* Change colour of links on hover */
   background-color: #ddd;
   color: #a5182d;
 }
-/* alignment of page title */
+
 .title {
+  /* alignment of page title */
   text-align: center;
 }
+
 .display-image {
   /* position of house design image */
 position: relative;
 /* allows image to be on the same line as well as setting dimensions */
 display: inline-block;
 }
+
 img.design {
   /* width of house design image */
   width: 200%;
   /* opacity of house design image */
   filter: opacity(20%);
 }
+
 pre#events {
   /* position of house event text */
   position: absolute;
@@ -69,5 +77,4 @@ pre#events {
   font-family: 'Archivo';
   margin-top: 15px;
   margin-left: 15px;
-
 }

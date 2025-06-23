@@ -95,7 +95,7 @@
     const patikiCountDisplay = document.getElementById('patiki-count');
     const patikiRef = db.ref('votes/patiki');
     patikiRef.on('value', snapshot => {
-      // set patikiCount to the value in the database, otherwise set it as 0
+      // Set patikiCount to the value in the database, otherwise set it as 0
       const patikiCount = snapshot.val() || 0;
       patikiCountDisplay.textContent = patikiCount;
       
@@ -140,11 +140,11 @@
                 inakaCountDisplay.textContent = inakaCount;
 
 
-                // these are the Lincoln High School houses
+                // Lincoln High School houses
                 var xValues = ["Pātiki", "Kūaka", "Kōtare", "Kāhu", "Mako", "Īnaka"];
-                  // the number of house points
+                // Number of house points
                 var yValues = [patikiCount, kuakaCount, kotareCount, kahuCount, makoCount, inakaCount];
-                  // the colours of the houses
+                // Colours of the houses
                 var barColors = ["#e72d2a", "#f9a245","#fdeb6c","#60ac3f","#00a2b9", "#eda6ac"];
                   
                 // display bar chart

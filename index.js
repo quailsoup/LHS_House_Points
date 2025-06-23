@@ -102,7 +102,7 @@ inakaRef.on('value', snapshot => {
       }
     } 
     Toastify({
-      // getting the input that are blank
+      // notify when data has been saved
       text: 'Saved Pātiki House Points Successfully!',
       duration: 2500,
       close: true,
@@ -155,7 +155,7 @@ document.getElementById('submit-kuaka').addEventListener('click', () => {
     }
       // making a toast notification
   Toastify({
-      // getting the input that are blank
+      // notify when data has saved
       text: 'Saved Kūaka House Points Successfully!',
       duration: 2500,
       close: true,
@@ -207,7 +207,7 @@ document.getElementById('submit-kotare').addEventListener('click', () => {
   }
    // making a toast notification
   Toastify({
-      // getting the input that are blank
+      // notify when data has been saved
       text: 'Saved Kōtare House Points Successfully!',
       duration: 2500,
       close: true,
@@ -259,7 +259,7 @@ document.getElementById('submit-kahu').addEventListener('click', () => {
   }
     // making a toast notification
   Toastify({
-      // getting the input that are blank
+      // notify when data has been saved
       text: 'Saved Kāhu House Points Successfully!',
       duration: 2500,
       close: true,
@@ -311,7 +311,7 @@ document.getElementById('submit-mako').addEventListener('click', () => {
   }
     // making a toast notification
   Toastify({
-      // getting the input that are blank
+      // notify when data has been saved
       text: 'Saved Mako House Points Successfully!',
       duration: 2500,
       close: true,
@@ -364,7 +364,7 @@ document.getElementById('submit-inaka').addEventListener('click', () => {
   }
   // making a toast notification
   Toastify({
-      // getting the input that are blank
+      // notify when data has been saved
       text: 'Saved Īnaka House Points Successfully!',
       duration: 2500,
       close: true,
@@ -400,9 +400,10 @@ eventRef.set(inputVal) // just store the string
 .then(() => {
   // notify in the console if the data is saved successfully
   console.log("Data saved successfully");
+
   // making a toast notification
   Toastify({
-      // getting the input that are blank
+      // notify when event is saved successfully
       text: 'Saved House Events Successfully!',
       duration: 2500,
       close: true,
@@ -422,7 +423,7 @@ eventRef.set(inputVal) // just store the string
     console.error("Error saving data");
       // making a toast notification
         Toastify({
-            // getting the input that are blank
+            // notify if there is an error saving data
             text: 'Error Saving Data!',
             duration: 2500,
             close: true,
@@ -438,7 +439,7 @@ eventRef.set(inputVal) // just store the string
   });
 });
 
-// make the events submitted display on the house events page and also remain in the text box
+// Make the events submitted display on the house events page and also remain in the text box
 eventDataInputShow = document.getElementById('event-input')
 const eventRef = db.ref('events/lhs');
 eventRef.on('value', snapshot => {

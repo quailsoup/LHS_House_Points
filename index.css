@@ -11,6 +11,7 @@ body {
   background: #A5182D;
   color: white;
 }
+
 img.logo {
   /*LHS logo size */
   height: 25%;
@@ -24,14 +25,15 @@ img.logo {
   /*header position */
   text-align: left;
 }
-/* top navigation bar colour */
+
 .navbar {
+  /* top navigation bar colour */
   overflow: hidden;
   background-color: #a5182d;
 }
   
-  /* navbar link design */
 .navbar a {
+  /* navbar link design */
   float: left;
   display: block;
   color: white;
@@ -40,13 +42,14 @@ img.logo {
   text-decoration: none;
 }
   
-  /* Change colour of links on hover */
 .navbar a:hover {
+  /* Change colour of links on hover */
   background-color: #ddd;
   color: #a5182d;
 }
-/* alignment of the page title */
+
 .title {
+  /* alignment of the page title */
   text-align: center;
 }
 
@@ -86,9 +89,11 @@ width: 50%;
 margin: auto;
 }
 .center {
+  /* centre house points display */
   margin-left: auto;
   margin-right: auto;
 }
 th, td {
+  /* padding of house events display as table */
   padding: 20px;
 }
