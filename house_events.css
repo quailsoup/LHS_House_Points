@@ -77,4 +77,6 @@ pre#events {
   font-family: 'Archivo';
   margin-top: 15px;
   margin-left: 15px;
+  /* alignment of event text */
+  text-align: left;
 }
