@@ -86,6 +86,20 @@ inakaRef.on('value', snapshot => {
         console.error("Error resetting points:", error);
       });
   }
+      Toastify({
+      // notify when house points have been reset
+      text: 'Reset Pātiki House Points Successfully!',
+      duration: 2500,
+      close: true,
+      gravity: "bottom", // if the notification is displayed at the top or bottom of the screen
+      position: "left", // if the notification is displayed at the left, right, or centre of the page
+      stopOnFocus: true, // Makes sure notification doesn't disappear when hovered.
+      className: "message", // extra css styling in the index.css
+      style: {
+          background: "#EF2D2D", // notification colour
+      },
+      onClick: function(){} // Callback after click
+  }).showToast(); // displaying the notification text
   });
   // submit patiki house points
   document.getElementById('submit-patiki').addEventListener('click', () => {
@@ -138,6 +152,21 @@ inakaRef.on('value', snapshot => {
         console.error("Error resetting points:", error);
       });
   }
+        // making a toast notification
+  Toastify({
+      // notify when house points have been reset
+      text: 'Reset Kūaka House Points Successfully!',
+      duration: 2500,
+      close: true,
+      gravity: "bottom", // if the notification is displayed at the top or bottom of the screen
+      position: "left", // if the notification is displayed at the left, right, or centre of the page
+      stopOnFocus: true, // Makes sure notification doesn't disappear when hovered.
+      className: "message", // extra css styling in the index.css
+      style: {
+          background: "#F9A245", // notification colour
+      },
+      onClick: function(){} // Callback after click
+  }).showToast(); // displaying the notification text
   });
 // submit kuaka house points
 document.getElementById('submit-kuaka').addEventListener('click', () => {
@@ -190,6 +219,21 @@ document.getElementById('submit-kuaka').addEventListener('click', () => {
         console.error("Error resetting points:", error);
       });
   }
+     // making a toast notification
+  Toastify({
+      // notify when house points have been reset
+      text: 'Reset Kōtare House Points Successfully!',
+      duration: 2500,
+      close: true,
+      gravity: "bottom", // if the notification is displayed at the top or bottom of the screen
+      position: "left", // if the notification is displayed at the left, right, or centre of the page
+      stopOnFocus: true, // Makes sure notification doesn't disappear when hovered.
+      className: "message", // extra css styling in the index.css
+      style: {
+          background: "#FDED74", // notification colour
+      },
+      onClick: function(){} // Callback after click
+  }).showToast(); // displaying the notification text
   });
 // submit kotare house points
 document.getElementById('submit-kotare').addEventListener('click', () => {
@@ -242,6 +286,21 @@ document.getElementById('submit-kotare').addEventListener('click', () => {
         console.error("Error resetting points:", error);
       });
   }
+      // making a toast notification
+  Toastify({
+      // notify when house points have been reset
+      text: 'Reset Kāhu House Points Successfully!',
+      duration: 2500,
+      close: true,
+      gravity: "bottom", // if the notification is displayed at the top or bottom of the screen
+      position: "left", // if the notification is displayed at the left, right, or centre of the page
+      stopOnFocus: true, // Makes sure notification doesn't disappear when hovered.
+      className: "message", // extra css styling in the index.css
+      style: {
+          background: "#60AC3F", // notification colour
+      },
+      onClick: function(){} // Callback after click
+  }).showToast(); // displaying the notification text
   });
 // submit kahu house points
 document.getElementById('submit-kahu').addEventListener('click', () => {
@@ -294,6 +353,21 @@ document.getElementById('submit-kahu').addEventListener('click', () => {
         console.error("Error resetting points:", error);
       });
   }
+      // making a toast notification
+  Toastify({
+      // notify when house points have been reset
+      text: 'Reset Mako House Points Successfully!',
+      duration: 2500,
+      close: true,
+      gravity: "bottom", // if the notification is displayed at the top or bottom of the screen
+      position: "left", // if the notification is displayed at the left, right, or centre of the page
+      stopOnFocus: true, // Makes sure notification doesn't disappear when hovered.
+      className: "message", // extra css styling in the index.css
+      style: {
+          background: "#00A2B9", // notification colour
+      },
+      onClick: function(){} // Callback after click
+  }).showToast(); // displaying the notification text
   });
 // submit mako house points
 document.getElementById('submit-mako').addEventListener('click', () => {
@@ -347,6 +421,21 @@ document.getElementById('submit-mako').addEventListener('click', () => {
         console.error("Error resetting points:", error);
       });
   }
+    // making a toast notification
+  Toastify({
+      // notify when house points have been reset
+      text: 'Reset Īnaka House Points Successfully!',
+      duration: 2500,
+      close: true,
+      gravity: "bottom", // if the notification is displayed at the top or bottom of the screen
+      position: "left", // if the notification is displayed at the left, right, or centre of the page
+      stopOnFocus: true, // Makes sure notification doesn't disappear when hovered.
+      className: "message", // extra css styling in the index.css
+      style: {
+          background: "#EBA2A9", // notification colour
+      },
+      onClick: function(){} // Callback after click
+  }).showToast(); // displaying the notification text
   });
 // submit inaka house points
 document.getElementById('submit-inaka').addEventListener('click', () => {
