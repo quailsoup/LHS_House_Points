@@ -24,6 +24,7 @@ img.logo {
   /*LHS logo size */
   height: 25%;
   width: 25%;
+  /* LHS logo position on header */
   float: left;
 }
 
@@ -41,7 +42,7 @@ img.logo {
 }
 
 .navbar a {
-  /* Navbar link colours */
+  /* Navbar link colours/position */
   float: left;
   display: block;
   color: white;
